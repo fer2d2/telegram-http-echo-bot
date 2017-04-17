@@ -18,18 +18,18 @@ npm install
 cp config.json.tpl config.json
 ```
 
-2. Add your [BotFather](https://core.telegram.org/bots#6-botfather) token to `config.json`.
-3. Run the application:
+3. Add your [BotFather](https://core.telegram.org/bots#6-botfather) token to `config.json`.
+4. Run the application:
 
 ```sh
 npm run-script serve
 ```
 
-This will run an HTTP server in port 3030.
+This will run an HTTP server on port 3030.
 
-4. Add the bot to your Telegram chat
-5. Register your chat with the bot command `/register`
-4. Test your application
+5. Add the bot to your Telegram chat
+6. Register your chat with the bot command `/register`
+7. Test your application
 
 ```sh
 curl -X POST \
@@ -37,6 +37,6 @@ curl -X POST \
   -H 'accept: application/json' \
   -H 'content-type: application/json' \
   -d '{
-	"msg": "This is an example message from your telegram bot"
+	"message": "Example message from your telegram bot"
 }'
 ```

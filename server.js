@@ -11,7 +11,7 @@ const telegram = require('./telegram');
 
 telegram.client.onMaster(() => {
     app.listen(config.serverPort, function () {
-        console.info('Server listening on port 3030')
+        console.info(`Server listening on port ${config.serverPort}`);
     });
 
     app.post('/broadcast', function (request, response) {

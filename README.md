@@ -15,7 +15,7 @@ npm install
 2. Copy `config.json.tpl` to `config.json`
 
 ```sh
-cp config.json.tpl config.json
+cp config.json.tmpl config.json
 ```
 
 3. Add your [BotFather](https://core.telegram.org/bots#6-botfather) token to `config.json`.

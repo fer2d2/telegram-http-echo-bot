@@ -40,3 +40,10 @@ curl -X POST \
 	"message": "Example message from your telegram bot"
 }'
 ```
+
+# TODOs (NPM)
+* Install redis (node.js)
+* Install uuid
+* Install bluebird
+* Update EchoController
+* Test repositories

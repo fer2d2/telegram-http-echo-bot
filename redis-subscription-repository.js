@@ -11,7 +11,6 @@ class RedisSubscriptionRepository {
         this.redisClient = require('./redis-connection').RedisClient;
     }
 
-
     add(chatId, channelName) {
         this.redisClient.hget(HASH_ID, chatId, (err, response) => {
             if(err) {

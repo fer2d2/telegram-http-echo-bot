@@ -8,34 +8,31 @@ const app = express();
 app.use(bodyParser.json());
 
 const telegram = require('./telegram');
+const broadcast = require('./telegram-broadcast').broadcast;
+
+const TopicRepository = require('repositories').TopicRepository;
 
 telegram.client.onMaster(() => {
     app.listen(config.serverPort, () => {
         console.info(`Server listening on port ${config.serverPort}`);
     });
+});
 
-    app.use((request, response, next) => {
-        let token = request.get('Authorization');
-        let topic = request.body.topic;
+app.post('/broadcast', (request, response) => {
+    let topic = request.body.topic;
+    let message = request.body.message;
 
-        findByTopicName(topic).then((response) => {
-            if(! response === token) {
-                throw 'Token does not match topic';
-            }
+    if(!TopicRepository.exists(topic)) {
+        response.sendStatus(404);
+    }
 
-            next();
-        }).error((err) => {
-            throw 'Topic not found'
-        });
-    });
+    broadcast(topic, request.body.message);
+    response.send(request.body);
+});
 
-    app.post('/broadcast', (request, response) => {
-        let channel = request.body.channel;
-        let message = request.body.message;
+app.post('/topic', (request, response) => {
+    let topicName = request.body.name;
+    TopicRepository.add(topicName);
 
-
-
-        telegram.broadcast(request.body.message);
-        response.send(request.body);
-    });
+    response.sendStatus(200);
 });

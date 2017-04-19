@@ -3,35 +3,29 @@
 const Telegram = require('telegram-node-bot');
 const TelegramBaseController = Telegram.TelegramBaseController;
 
+const SubscriptionRepository = require('repositories').SubscriptionRepository;
+const TopicRepository = require('repositories').TopicRepository;
+
 class EchoController extends TelegramBaseController {
 
-    registerHandler($) {
-        let chatId = $.message.chat.id;
-        let registrationTimestamp = Date.now();
+    subscribeHandler($) {
+        let chat = $.message.chat.id;
+        let topic = ''; // TODO
 
-        // TODO repository
-        // if (!db.get(chatId)) {
-        //     db.set(chatId, {updatedAt: registrationTimestamp});
-        // }
+        SubscriptionRepository.add(chat, topic);
 
-        $.sendMessage(`Added chat ${chatId} to database`);
+        $.sendMessage(`Subscribed to topic ${topic}`);
     }
 
-    registrationsHandler($) {
-        let registrations = [];
-
-        // TODO repository
-        // db.forEach(function (key, val) {
-        //     registrations.push(key);
-        // });
-
-        $.sendMessage(JSON.stringify(registrations));
+    topicsHandler($) {
+        let topics = TopicRepository.all();
+        $.sendMessage(JSON.stringify(topics));
     }
 
     get routes() {
         return {
-            'registerCommand': 'registerHandler',
-            'registrationsCommand': 'registrationsHandler'
+            'subscribeCommand': 'subscribeHandler',
+            'topicsCommand': 'topicsHandler'
         }
     }
 }

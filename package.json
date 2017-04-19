@@ -9,6 +9,7 @@
   "author": "Fernando Moro Hernández",
   "license": "ISC",
   "dependencies": {
+    "lowdb": "^0.16.2",
     "telegram-node-bot": "^4.0.5"
   },
   "devDependencies": {

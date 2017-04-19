@@ -1,7 +1,7 @@
 'use strict';
 
-const SubscriptionRepository = require('./redis-subscription-repository').RedisSubscriptionRepository;
-const TopicRepository = require('./redis-topic-repository').RedisTopicRepository;
+const SubscriptionRepository = require('./lowdb-subscription-repository').LowDBSubscriptionRepository;
+const TopicRepository = require('./lowdb-topic-repository').LowDBTopicRepository;
 
 module.exports.SubscriptionRepository = new SubscriptionRepository();
 module.exports.TopicRepository = new TopicRepository();

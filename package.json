@@ -2,20 +2,18 @@
   "name": "jenkins-echo-bot",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "serve": "node server.js"
   },
   "author": "Fernando Moro Hernández",
-  "license": "ISC",
+  "license": "GPL V2",
   "dependencies": {
-    "lowdb": "^0.16.2",
-    "telegram-node-bot": "^4.0.5"
+    "telegram-node-bot": "^4.0.5",
+    "express": "^4.15.2",
+    "body-parser": "^1.17.1",
+    "lowdb": "^0.16.2"
   },
   "devDependencies": {
-    "body-parser": "^1.17.1",
-    "dirty": "^1.1.0",
-    "express": "^4.15.2",
-    "flags": "^0.1.3"
   }
 }

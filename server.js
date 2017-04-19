@@ -26,7 +26,7 @@ app.post('/broadcast', (request, response) => {
         response.sendStatus(404);
     }
 
-    broadcast(topic, request.body.message);
+    broadcast(topic, message);
     response.send(request.body);
 });
 

@@ -1,6 +1,6 @@
 'use strict';
 
-const telegramClient = require('telegram').client;
+const telegramClient = require('./telegram').client;
 const TextCommand = require('telegram-node-bot').TextCommand;
 const EchoController = require('./telegram-echo-controller').EchoController;
 

@@ -9,5 +9,5 @@ const telegramClient = new Telegram.Telegram(config.telegramApiKey, {
 
 module.exports.client = telegramClient;
 
-require('telegram-router');
-require('telegram-broadcast');
+require('./telegram-router');
+require('./telegram-broadcast');

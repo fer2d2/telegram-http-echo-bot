@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 const telegram = require('./telegram');
 const broadcast = require('./telegram-broadcast').broadcast;
 
-const TopicRepository = require('repositories').TopicRepository;
+const TopicRepository = require('./repositories').TopicRepository;
 
 telegram.client.onMaster(() => {
     app.listen(config.serverPort, () => {

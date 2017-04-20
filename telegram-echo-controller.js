@@ -3,8 +3,8 @@
 const Telegram = require('telegram-node-bot');
 const TelegramBaseController = Telegram.TelegramBaseController;
 
-const SubscriptionRepository = require('repositories').SubscriptionRepository;
-const TopicRepository = require('repositories').TopicRepository;
+const SubscriptionRepository = require('./repositories').SubscriptionRepository;
+const TopicRepository = require('./repositories').TopicRepository;
 
 class EchoController extends TelegramBaseController {
 

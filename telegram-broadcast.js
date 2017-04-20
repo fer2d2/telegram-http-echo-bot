@@ -1,7 +1,7 @@
 'use strict';
 
-const telegramClient = require('telegram').client;
-const SubscriptionRepository = require('repositories').SubscriptionRepository;
+const telegramClient = require('./telegram').client;
+const SubscriptionRepository = require('./repositories').SubscriptionRepository;
 
 function broadcast(topic, data) {
     SubscriptionRepository.findByTopic(topic).forEach((chat) => {

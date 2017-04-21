@@ -12,7 +12,7 @@ through Telegram.
 npm install
 ```
 
-2. Copy `config.json.tpl` to `config.json`
+2. Copy `config.json.tmpl` to `config.json`
 
 ```sh
 cp config.json.tmpl config.json

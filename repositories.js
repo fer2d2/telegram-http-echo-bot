@@ -3,5 +3,8 @@
 const SubscriptionRepository = require('./lowdb-subscription-repository').LowDBSubscriptionRepository;
 const TopicRepository = require('./lowdb-topic-repository').LowDBTopicRepository;
 
-module.exports.SubscriptionRepository = new SubscriptionRepository();
-module.exports.TopicRepository = new TopicRepository();
+let subscriptionRepository = new SubscriptionRepository();
+let topicRepository = new TopicRepository();
+
+module.exports.SubscriptionRepository = subscriptionRepository;
+module.exports.TopicRepository = topicRepository;

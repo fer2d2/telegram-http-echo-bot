@@ -2,15 +2,18 @@
 
 const telegramClient = require('./telegram').client;
 const SubscriptionRepository = require('./repositories').SubscriptionRepository;
+const StrUtils = require('./string-utils');
 
 function broadcast(topic, data) {
-    SubscriptionRepository.findByTopic(topic).forEach((chat) => {
-        let message = '';
-        for (let property in data) {
-            message += `${property}: ${data[property]}\n`;
-        }
+    let topics = SubscriptionRepository.findByTopic(topic);
 
-        telegramClient.api.sendMessage(chat, message);
+    if(!Array.isArray(topic)) {
+        topics = [topics];
+    }
+
+    topics.forEach((subscription) => {
+        let message = StrUtils.objectToFormattedText(data);
+        telegramClient.sendMessage(subscription.chat, message);
     });
 }
 

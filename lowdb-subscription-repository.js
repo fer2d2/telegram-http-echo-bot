@@ -3,8 +3,8 @@
 class LowDBSubscriptionRepository {
 
     constructor() {
-        let dbClient = require('./lowdb-connection').client;
-        this.subscriptionsManager = dbClient.get('subscriptions');
+        this.dbClient = require('./lowdb-connection').client;
+        this.subscriptionsManager = this.dbClient.get('subscriptions');
     }
 
     add(chat, topic) {
@@ -21,7 +21,7 @@ class LowDBSubscriptionRepository {
     findByTopic(topic) {
         return this.subscriptionsManager.find({
             topic: topic
-        }).map('chat').value();
+        }).value();
     }
 }
 

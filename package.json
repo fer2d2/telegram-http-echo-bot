@@ -4,16 +4,15 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "serve": "node server.js"
+    "serve": "node index.js"
   },
   "author": "Fernando Moro Hernández",
   "license": "GPL-2.0",
   "dependencies": {
-    "telegram-node-bot": "^4.0.5",
-    "express": "^4.15.2",
     "body-parser": "^1.17.1",
-    "lowdb": "^0.16.2"
+    "express": "^4.15.2",
+    "lowdb": "^0.16.2",
+    "node-telegram-bot-api": "^0.27.0"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }

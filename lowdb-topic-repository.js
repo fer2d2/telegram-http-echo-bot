@@ -3,8 +3,8 @@
 class LowDBTopicRepository {
 
     constructor() {
-        let dbClient = require('./lowdb-connection').client;
-        this.topicsManager = dbClient.get('topics');
+        this.dbClient = require('./lowdb-connection').client;
+        this.topicsManager = this.dbClient.get('topics');
     }
 
     add(name) {
@@ -23,10 +23,10 @@ class LowDBTopicRepository {
             name: name
         };
 
-        return this.topicsManager.find(topicFound).value() !== null; // TODO null or [] ?
+        return this.topicsManager.find(topicFound).value() !== undefined;
     }
 
-    all() {
+    allTopicNames() {
         return this.topicsManager.map('name').value();
     }
 }

@@ -1,13 +1,11 @@
 'use strict';
 
 const config = require('./config.json');
+const TelegramBot = require('node-telegram-bot-api');
 
-const Telegram = require('telegram-node-bot');
-const telegramClient = new Telegram.Telegram(config.telegramApiKey, {
-    workers: 1,
-});
+const client = new TelegramBot(config.telegramApiKey, {polling: true});
 
-module.exports.client = telegramClient;
+module.exports.client = client;
 
-require('./telegram-router');
+require('./telegram-controllers');
 require('./telegram-broadcast');

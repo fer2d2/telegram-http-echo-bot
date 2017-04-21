@@ -51,6 +51,9 @@ curl -X POST \
 
 5. Add the bot to your Telegram chat
 6. Subscribe to some topics with `/subscribe :topic`, e.g. `/subscribe sports`
+
+![Subscribe to topic](./img/subscription.png "Subscribe to topic")
+
 7. Start sending messages to subscribed chats:
 
 ```sh
@@ -67,3 +70,5 @@ curl -X POST \
 	}
 }'
 ```
+
+![Broadcasting message to Telegram](./img/broadcasting.png "Broadcasting message to Telegram")

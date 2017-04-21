@@ -1,5 +1,5 @@
 {
-  "name": "jenkins-echo-bot",
+  "name": "http-echo-bot",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -7,7 +7,7 @@
     "serve": "node server.js"
   },
   "author": "Fernando Moro Hernández",
-  "license": "GPL V2",
+  "license": "GPL-2.0",
   "dependencies": {
     "telegram-node-bot": "^4.0.5",
     "express": "^4.15.2",

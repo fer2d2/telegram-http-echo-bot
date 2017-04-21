@@ -62,7 +62,7 @@ curl -X POST \
 	"topic": "sports",
 	"message": {
 		"Title": "Gareth Southgate has paid tribute to former team-mate Ugo Ehiogu",
-		"Summary": "England manager Gareth Southgate has paid tribute to Ugo Ehiogu and spoken of the 'true partnership' he shared with his former Aston Villa and Middlesbrough team-mate.",
+		"Summary": "England manager Gareth Southgate has paid tribute to Ugo Ehiogu and spoken of the *true partnership* he shared with his former Aston Villa and Middlesbrough team-mate.",
 		"Read more": "http://www.skysports.com/football/news/11095/10845530/gareth-southgate-has-paid-tribute-to-former-team-mate-ugo-ehiogu"
 	}
 }'

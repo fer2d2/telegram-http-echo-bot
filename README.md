@@ -25,7 +25,7 @@ cp config.json.tmpl config.json
 npm run-script serve
 ```
 
-This will run an HTTP server on port 3030.
+This will run the HTTP server on port 3030.
 
 5. Register some topics on the server
 
@@ -49,12 +49,12 @@ curl -X POST \
 }'
 ```
 
-5. Add the bot to your Telegram chat
-6. Subscribe to some topics with `/subscribe :topic`, e.g. `/subscribe sports`
+6. Add the bot to a Telegram chat
+7. Subscribe to some topics with `/subscribe :topic`, e.g. `/subscribe sports`
 
 ![Subscribe to topic](./img/subscription.png "Subscribe to topic")
 
-7. Start sending messages to subscribed chats:
+8. Send messages to subscribed chats:
 
 ```sh
 curl -X POST \

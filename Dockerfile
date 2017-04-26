@@ -1,8 +1,9 @@
+# Build the image:
+# > docker build --build-arg telegram_token="{{telegram_token}}" -t user/image-name .
+
 FROM node:boron
 
 LABEL maintainer "morohernandez.fernando@gmail.com"
-
-# docker build -t fernandomtc/mtc-jenkins-status-bot
 
 ENV NPM_ACTION serve
 
